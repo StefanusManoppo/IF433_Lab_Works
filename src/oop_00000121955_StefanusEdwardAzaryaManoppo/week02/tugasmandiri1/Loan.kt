@@ -1,0 +1,16 @@
+package oop_00000121955_StefanusEdwardAzaryaManoppo.week02.tugasmandiri1
+
+class Loan(
+    val bookTitle: String,
+    val borrower: String,
+    val loanDuration: Int = 1
+) {
+
+    fun calculateFine(): Int {
+        if (loanDuration > 3) {
+            return (loanDuration - 3) * 2000
+        } else {
+            return 0
+        }
+    }
+}
