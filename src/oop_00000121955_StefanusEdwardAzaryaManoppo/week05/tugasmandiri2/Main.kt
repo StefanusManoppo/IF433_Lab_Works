@@ -9,5 +9,11 @@ fun main() {
     for (metode in listPembayaran) {
         println("Memproses pembayaran untuk: ${metode.accountName}")
         metode.processPayment(75000.0)
+
+        if (metode is EWallet) {
+            println(">> Mendeteksi EWallet, mencoba top up otomatis...")
+            metode.topUp(50000.0)
+            metode.processPayment(75000.0)
+        }
     }
 }
