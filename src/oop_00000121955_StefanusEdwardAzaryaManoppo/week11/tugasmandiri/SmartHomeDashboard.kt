@@ -36,4 +36,9 @@ fun main() {
 
     val totalPower = homeDevices.run { sumOf { it.powerLoad } }
     println("Total Daya: $totalPower Watt")
+
+    println("\n=== SMART HOME DEVICES ===")
+    homeDevices.forEach {
+        println(it.diagnose())
+    }
 }
